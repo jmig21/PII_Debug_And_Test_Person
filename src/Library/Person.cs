@@ -4,10 +4,11 @@ namespace UnitTestAndDebug
 {
     public class Person
     {
-        public Person(string name, string id)
+        public Person(string name, string id, string fechaNac)
         {
             this.Name = name;
             this.ID = id;
+            this.FechaNac = fechaNac;
         }
 
         private string name;
@@ -45,6 +46,21 @@ namespace UnitTestAndDebug
             }
         }
 
+        public string FechaNac
+        {
+             get
+            {
+                return this.FechaNac;
+            }
+            
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    this.FechaNac = value;
+                }
+            }
+        }
         public void IntroduceYourself()
         {
             Console.WriteLine($"Soy {this.Name} y mi cédula es {this.ID}");
